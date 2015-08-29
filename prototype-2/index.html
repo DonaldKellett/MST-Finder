@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<!-- skel-baseline v2.0.1 | (c) n33 | getskel.com | MIT licensed -->
+<html>
+	<head>
+		<title>Minimum Spanning Tree Solver (Prim's Algorithm) (Prototype 2)</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-xlarge.css" />
+		</noscript>
+	</head>
+	<body id="top">
+
+		<!-- Header -->
+			<header id="header" class="skel-layers-fixed">
+				<h1><a href="index.html">Minimum Spanning Tree Solver (Prototype 2)</a></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Banner -->
+			<section id="banner">
+				<h2>Minimum Spanning Tree Solver (Prototype 2)</h2>
+				<p>Uses Prim's Algorithm to find a minimum spanning tree</p>
+			</section>
+
+		<!-- Main -->
+			<div id="main" class="container">
+				<div class="row">
+					<div class="12u" id="init" style="display: none;">
+						<h3>Initialization</h3>
+						<p>Please enter the number of vertices that your graph has.</p>
+						<form>
+							<div class="row">
+								<div class="9u 12u(2)">
+									<input type="text" id="vertexNum" placeholder="Enter a number ... " />
+								</div>
+								<div class="3u 12u(2)">
+									<a class="button fit" href="javascript:void(0)" onclick="init()">Initialize</a>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="12u" id="mainPanel" style="display: none;">
+						<h3>Draw Your Graph</h3>
+						<p>Please fill in the information below to add edges to your graph.  After you are done adding edges, click &quot;Find MST&quot;.</p>
+						<div class="row">
+							<div class="12u">
+								<div class="table-wrapper">
+									<table id="distanceMatrix">
+										<thead>
+											<tr>
+												<td></td>
+												<td>A</td>
+												<td>B</td>
+												<td>C</td>
+												<td>D</td>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>A</td>
+												<td>NaN</td>
+												<td>NaN</td>
+												<td>NaN</td>
+												<td>NaN</td>
+											</tr>
+											<tr>
+												<td>B</td>
+												<td>NaN</td>
+												<td>NaN</td>
+												<td>NaN</td>
+												<td>NaN</td>
+											</tr>
+											<tr>
+												<td>C</td>
+												<td>NaN</td>
+												<td>NaN</td>
+												<td>NaN</td>
+												<td>NaN</td>
+											</tr>
+											<tr>
+												<td>D</td>
+												<td>NaN</td>
+												<td>NaN</td>
+												<td>NaN</td>
+												<td>NaN</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<p><a class="button" href="javascript:void(0)" onclick="addEdge()">Add Edge</a> <a href="javascript:void(0)" class="button special" onclick="primsAlgorithm()">Find MST</a></p>
+					</div>
+					<div class="12u" id="findMST" style="display: none;">
+						<h3>Minimum Spanning Tree found</h3>
+						<p>Please add the following edges to your graph and record its weight.  The edges have been given in the order that you would find if you were to do Prim's Algorithm starting on vertex A.</p>
+						<p>Minimum Spanning Tree: <span id="mstEdges"></span></p>
+						<p>Weight of Spanning Tree: <span id="mstWeight"></span></p>
+					</div>
+					<noscript>
+						<div class="12u">
+							<h3>Javascript Disabled</h3>
+							<p>This application runs on Javascript.  Please make sure you have enabled Javascript before you use this program.</p>
+						</div>
+					</noscript>
+				</div>
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<div class="row">
+						<div class="12u">
+							<h3>Notice</h3>
+							<p>This is just a prototype of the <b>Minimum Spanning Tree finder</b>.  In this version, even though the application/program asks you at the start how many vertices your graph has, the fact is that this program can only work with graphs with <i>4 or 5</i> at the time of writing.  If you enter any number other than 4 or 5, it (the program) will return with an &quot;error&quot; in the form of a Javascript Alert (very &quot;creative&quot;, I know).  The full version of this application/program will (hopefully) be released in the future.</p>
+							<p>Furthermore, it has been observed that this program does not accept floats (i.e. decimal numbers) as arguments - this is due to the nature of some in-built Javascript functions.  If I find a solution to fix it I will do so in the future.</p>
+						</div>
+					</div>
+				</div>
+				<div class="copyright">
+					&copy; Donald Leung.  All rights reserved.
+				</div>
+			</footer>
+
+		<!-- My Scripts -->
+			<script src="prims-algorithm.js"></script>
+
+	</body>
+</html>
